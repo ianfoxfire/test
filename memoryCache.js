@@ -57,9 +57,9 @@ module.exports = class MemoryCache {
         // TODO: Check for expiry, and clear if expired.
 
         // Mark as most recently read.
-        this._mostRecentlyRead.moveToBack(node);
+        this._mostRecentlyRead.moveToFront(node);
 
-        return { cached: false, value: item.value };
+        return { cached: true, value: item.value };
     }
 
     /**
